@@ -1,6 +1,5 @@
 ---
 tags:
-  - About
   - Michael Jordan
 ---
 

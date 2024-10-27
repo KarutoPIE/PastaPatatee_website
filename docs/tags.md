@@ -1,5 +1,4 @@
-# Tags
+# Tag
 
-My tags
 
 <!-- material/tags -->

@@ -1,27 +1,47 @@
-site_name: My Docs
-site_url: https://mydomain.org/mysite
+site_name: Pasta Patate e?
+
+site_url: https://mydomain.org/pastapatatee?
+
 theme:
   name: material
+  logo: assets/logo1300 50.svg
+  favicon: assets/logo1300 50.svg
+  language: it
+  font:
+    text: DM Sans
+    code: Sometype Mono
+
   palette: 
 
-    # Palette toggle for light mode
-    - scheme: default
+    # Palette toggle for automatic mode
+    - media: "(prefers-color-scheme)"
       toggle:
-        icon: material/brightness-7 
+        icon: material/lightbulb-multiple-outline
+        name: Switch to light mode
+
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: teal
+      accent: green
+      toggle:
+        icon: material/lightbulb-on
         name: Switch to dark mode
 
     # Palette toggle for dark mode
-    - scheme: slate
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      accent: cyan
       toggle:
-        icon: material/brightness-4
-        name: Switch to light mode
+        icon: material/lightbulb-outline
+        name: Switch to system preference
 
   features:
     - navigation.instant
     - navigation.instant.progress
     - navigation.instant.preview
     - navigation.tracking
-    - navigation.tabs
     - navigation.tabs
     - navigation.tabs.sticky
     - navigation.sections
@@ -32,30 +52,157 @@ theme:
     - search.highlight
     - search.share
     - content.code.copy
+    - content.tooltips
+  
+  icon:
+    tag:
+      default: material/tag-text
+      code: material/code-json
+      Git: simple/git
+      basket: simple/jordan
+      Docs: simple/googledocs
+      py: material/language-python
+      VSC: material/microsoft-visual-studio-code
+      Win: fontawesome/brands/windows
+      YT: simple/youtube
+
 
 plugins:
-  - search
-  - blog
+
+  - search:
+      lang:
+        - en
+        - it
+      pipeline:
+        - stopWordFilter
+      separator: '[\s\-,:!=\[\]()"/]+|(?!\b)(?=[A-Z][a-z])|\.(?!\d)|&[lg]t;'
+
+  - blog:
+      blog_toc: true
+      post_date_format: full
+      post_url_date_format: dd/MM/yyyy
+      post_excerpt: required                    # è richiesta l'anteprima del post separata da !more
+      post_readtime: false
+      archive_date_format: MMMM yyyy
+      # categories_allowed:                     # specifica quali categorie possono essere elencate
+      #  - Documentation
+
   - tags:
       tags_file: tags.md
 
+  - privacy
+
+
+
 markdown_extensions:
+  - abbr
+  - tables
+  - def_list
+  - attr_list
   - pymdownx.highlight:
       anchor_linenums: true
       line_spans: __span
       pygments_lang_class: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - pymdownx.inlinehilite
-  - pymdownx.snippets
+  - pymdownx.snippets:
+      auto_append:
+        - includes/abbreviations.md
   - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+
 
 nav:
-  - Home: index.md
-  - Code Docs:
-    - Java: coding/my-first-java-file.md
-  - About:
+  - Home (beta): index.md
+  - Coding:
+    - Codici attributo HTML testati in MkDocs per ora: Coding/HTMLcommands.md
+    - Python non riconosciuto come comando: Coding/PythonCommandPATH.md
+    - VisualStudioCode non rileva Python: Coding/VSCcantfindPython.md
+    - Bypassare i criteri di esecuzione di Windows PowerShell: Coding/BypassPowerShellExecutionPolicy.md
+  - About (beta):
     - Current Projects: about/projects.md
     - About Me: about/about.md
     - Childhood: about/childhood.md
-  - Tags: tags.md
   - Blog:
     - blog/index.md
+    - blog/authors.md
+  - Tag: tags.md
+
+
+extra:
+
+  consent:
+    title: "IMPORTANTE: consenso allo sfruttamento dei dati"
+    cookies:
+      CronologiaWeb:
+        name: Cronologia di navigazione web
+        checked: true
+      Vita:
+        name: Stile di vita
+        checked: true
+      Posizione:
+        name: Accesso alla posizione
+        checked: true
+      Alimentazione:
+        name: Accesso al controllo alimentazione
+        checked: true
+      Alimentazione:
+        name: Accesso a casa tua
+        checked: true
+      analytics:
+        name: Preferenze impostazioni sito corrente
+        checked: false
+    description: >- 
+      Utilizziamo i cookie per riconoscere le tue visite ripetute e le tue preferenze, abitudini,
+      stile di vita, cosa indossi, dove abiti, dove lavori, cosa mangi, dove sei stato ieri alle
+      18:57, chi sono i tuoi genitori, quanti animali domestici hai, la tua cronologia web,
+      ma anche per misurare l'efficacia della nostra documentazione e se gli utenti trovano
+      ciò che stanno cercando. Con il tuo consenso, ci aiuti a migliorare il nostro sito web,
+      nonché ad autorizzarci a vendere tua vita privata a terzi.
+    actions:
+      - manage
+      - accept
+
+  tags:
+    Coding: code
+    GitHub: Git
+    Michael Jordan: basket
+    MkDocs: Docs
+    Python: py
+    VisualStudioCode: VSC
+    Windows: Win
+    YouTube: YT
+
+  social:
+    - icon: material/github
+      link: https://github.com/KarutoPIE
+      name: KarutoPIE su GitHub
+    - icon: fontawesome/brands/instagram
+      link: https://www.instagram.com/carminecarotenuto.cc/
+      name: Carmine su Instagram
+    - icon: material/gmail
+      link: mailto:carminecarotenuto.cc@gmail.com
+      name: Scrivimi un'email
+
+
+watch:
+  - includes
+
+
+repo_url: https://github.com/KarutoPIE/SitoWebProva
+repo_name: KarutoPIE/SitoWebProva
+
+      
+  # generator: false                            # rimuove i crediti a Material for MkDocs
+
+copyright: Copyright &copy; 2021-2024 Crotonno Production
