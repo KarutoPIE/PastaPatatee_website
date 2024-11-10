@@ -7,6 +7,7 @@ theme:
   logo: assets/logo1300 50.svg
   favicon: assets/logo1300 50.svg
   language: it
+
   font:
     text: DM Sans
     code: Sometype Mono
@@ -59,12 +60,16 @@ theme:
       default: material/tag-text
       code: material/code-json
       Git: simple/git
-      basket: simple/jordan
       Docs: simple/googledocs
       py: material/language-python
       VSC: material/microsoft-visual-studio-code
       Win: fontawesome/brands/windows
       YT: simple/youtube
+      Uni: material/school
+      Teatro: fontawesome/solid/masks-theater
+      Ig: material/instagram
+      Wiki: fontawesome/brands/wikipedia-w
+
 
 
 plugins:
@@ -92,13 +97,33 @@ plugins:
 
   - privacy
 
+  - glightbox:
+      touchNavigation: true                 # Enable or disable the touch navigation (swipe)
+      loop: false                           # Loop slides on end
+      effect: zoom                          # Name of the effect on lightbox open (zoom, fade, none)
+      slide_effect: slide                   # Name of the effect on lightbox slide (slide, zoom, fade, none)
+      width: 100%                           # Width for inline elements and iframes. You can use any unit for example 90% or 100vw for full width
+      height: auto                          # Height for inline elements and iframes. You can use any unit for example 90%, 100vh or auto
+      zoomable: true                        # Enable or disable zoomable images
+      draggable: true                       # Enable or disable mouse drag to go prev and next slide
+      skip_classes:                         # Disable lightbox of those image with specific custom class { .class } name
+        - skip-lightbox
+      auto_caption: false                   # Enable or disable using alt of image as caption title automatically
+      caption_position: bottom              # Default captions position (bottom, top, left, right)
+      background: white                     # The background CSS of lightbox image. The background will shown when the image is transparent. You can use any CSS value for the background for example #74b9ff or Gainsboro or none for nothing
+      shadow: true                          # Enable or disable the shadow of lightbox image. Disable it when the background is none to prevent shadow around the transparent image
+      manual: false                         # When true, lightbox has to be enabled for each image manually by adding on-glb class to it or adding glightbox: true meta on page
+
 
 
 markdown_extensions:
   - abbr
+  - meta
   - tables
   - def_list
   - attr_list
+  - md_in_html
+  - pymdownx.blocks.caption
   - pymdownx.highlight:
       anchor_linenums: true
       line_spans: __span
@@ -124,15 +149,14 @@ markdown_extensions:
 
 nav:
   - Home (beta): index.md
+  - About (beta):
+    - Biografia: about/about.md
+    - Current Projects: about/projects.md
   - Coding:
     - Codici attributo HTML testati in MkDocs per ora: Coding/HTMLcommands.md
     - Python non riconosciuto come comando: Coding/PythonCommandPATH.md
     - VisualStudioCode non rileva Python: Coding/VSCcantfindPython.md
     - Bypassare i criteri di esecuzione di Windows PowerShell: Coding/BypassPowerShellExecutionPolicy.md
-  - About (beta):
-    - Current Projects: about/projects.md
-    - About Me: about/about.md
-    - Childhood: about/childhood.md
   - Blog:
     - blog/index.md
     - blog/authors.md
@@ -176,12 +200,15 @@ extra:
   tags:
     Coding: code
     GitHub: Git
-    Michael Jordan: basket
     MkDocs: Docs
     Python: py
     VisualStudioCode: VSC
     Windows: Win
     YouTube: YT
+    Università: Uni
+    Teatro: Teatro
+    Instagram: Ig
+    Wikipedia: Wiki
 
   social:
     - icon: material/github
@@ -203,6 +230,6 @@ repo_url: https://github.com/KarutoPIE/SitoWebProva
 repo_name: KarutoPIE/SitoWebProva
 
       
-  # generator: false                            # rimuove i crediti a Material for MkDocs
+# generator: false                            # rimuove i crediti a Material for MkDocs
 
 copyright: Copyright &copy; 2021-2024 Crotonno Production
