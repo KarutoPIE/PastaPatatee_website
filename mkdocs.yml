@@ -4,6 +4,7 @@ site_url: https://mydomain.org/pastapatatee?
 
 theme:
   name: material
+  custom_dir: overrides
   logo: assets/logo1300 50.svg
   favicon: assets/logo1300 50.svg
   language: it
@@ -131,6 +132,9 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
+      options:
+        custom_icons:
+          - overrides/.icons
   - pymdownx.inlinehilite
   - pymdownx.snippets:
       auto_append:
@@ -149,9 +153,8 @@ markdown_extensions:
 
 nav:
   - Home (beta): index.md
-  - About (beta):
+  - About:
     - Biografia: about/about.md
-    - Current Projects: about/projects.md
   - Coding:
     - Codici attributo HTML testati in MkDocs per ora: Coding/HTMLcommands.md
     - Python non riconosciuto come comando: Coding/PythonCommandPATH.md
@@ -220,6 +223,8 @@ extra:
     - icon: material/gmail
       link: mailto:carminecarotenuto.cc@gmail.com
       name: Scrivimi un'email
+    - icon: SamFollSet/SamFollSF
+      name: "Samuele ricorda: luglio 2025"
 
 
 watch:

@@ -11,7 +11,7 @@ tags:
 # Aggiornamento 3
 
 Bozza nuovo aggiornamento. <!-- more -->  
-Da segnalare fin ora: aggiunta biografia; imprecazioni varie per come allineare la fotografia con la didascalia.  
+Da segnalare fin ora: aggiunta biografia; imprecazioni varie per come allineare la fotografia con la didascalia; aggiunta cartella ovverides per icone personalizzate.  
 Da fare:  
 - home nuova  
 - revamp Blog  
