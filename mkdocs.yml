@@ -160,6 +160,7 @@ nav:
     - Python non riconosciuto come comando: Coding/PythonCommandPATH.md
     - VisualStudioCode non rileva Python: Coding/VSCcantfindPython.md
     - Bypassare i criteri di esecuzione di Windows PowerShell: Coding/BypassPowerShellExecutionPolicy.md
+    - Aggiornare le GitHub Actions alla versione v4: Coding/GitHubActionsArtifactsV4Update.md
   - Blog:
     - blog/index.md
     - blog/authors.md
